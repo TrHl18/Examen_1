@@ -1,17 +1,44 @@
 import 'package:flutter/material.dart';
 
 class TareasPage extends StatelessWidget{
-const TareasPage({super.key});
+ TareasPage({super.key});
+final List<String> tareas = [
+    'Foro 6.1 Investigación sobre tendencias tecnologicas',
+    'Tarea 6.1 Avance Proyecto',
+    'Tarea 6.2 Investigacion',
+  ];
+
 @override
 
 Widget build(BuildContext context){
   return Scaffold(
-body: const Center(
-  child: Text("Lista de Tareas"),
-),
+    appBar: AppBar(title: Text("Tareas Pendientes"),
+    ),
+body: TareasPendientes(tareas: tareas) , 
 floatingActionButton: FloatingActionButton(
-  child: const Icon(Icons.exit_to_app),
-      onPressed: () => Navigator.pop(context)),
+  onPressed:(){}, 
+tooltip: 'Nueva Tarea',
+child: Icon(Icons.note_alt_outlined),),
+
+
 );
 }
+}
+class TareasPendientes extends StatelessWidget {
+  final List<String> tareas;
+
+  TareasPendientes({required this.tareas});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: tareas.length,
+      itemBuilder: (context, index) {
+        return ListTile(
+          title: Text(tareas[index]),
+          
+        );
+      },
+    );
+  }
 }
