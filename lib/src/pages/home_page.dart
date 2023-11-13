@@ -4,7 +4,6 @@ import 'package:flutter_examen/src/pages/Moneda/moneda_page.dart';
 import 'package:flutter_examen/src/pages/Noticias/noticias_page.dart';
 import 'package:flutter_examen/src/pages/Podcast/podcast_page.dart';
 import 'package:flutter_examen/src/pages/Tareas/tareas_page.dart';
-import 'package:flutter_examen/src/pages/home_page.dart';
 
 
 

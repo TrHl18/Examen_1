@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class TareasPage extends StatelessWidget{
  TareasPage({super.key});
+
 final List<String> tareas = [
     'Foro 6.1 Investigación sobre tendencias tecnologicas',
     'Tarea 6.1 Avance Proyecto',
@@ -12,12 +13,24 @@ final List<String> tareas = [
 
 Widget build(BuildContext context){
   return Scaffold(
-    appBar: AppBar(title: Text("Tareas Pendientes"),
+    appBar: AppBar(title: Text("Tareas Pendientes"), backgroundColor: Colors.red,
+    actions: [
+   IconButton(
+      icon: Icon(Icons.search),
+   onPressed: () {
+            },
+            ),
+            IconButton(
+              icon: Icon(Icons.more_vert),
+              onPressed: () {
+            },
+            ),
+    ],
     ),
 body: TareasPendientes(tareas: tareas) , 
 floatingActionButton: FloatingActionButton(
   onPressed:(){}, 
-tooltip: 'Nueva Tarea',
+tooltip: 'Nueva Tarea', backgroundColor: Colors.red,
 child: Icon(Icons.note_alt_outlined),),
 
 
@@ -36,7 +49,7 @@ class TareasPendientes extends StatelessWidget {
       itemBuilder: (context, index) {
         return ListTile(
           title: Text(tareas[index]),
-          
+        
         );
       },
     );
