@@ -5,13 +5,18 @@ class MonedaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: CambioMoneda(),
-      
+      home: Scaffold(
+      body: CambioMoneda(),
+         floatingActionButton: FloatingActionButton(
+  child: const Icon(Icons.exit_to_app),
+      onPressed: () => Navigator.pop(context))
+      )
     );
   }
 }
 
 class CambioMoneda extends StatefulWidget {
+  CambioMoneda ({Key? key}) : super(key: key);
   @override
   _CambioMoneda createState() => _CambioMoneda();
 }
@@ -46,7 +51,7 @@ class _CambioMoneda extends State<CambioMoneda> {
                           },
                           child: Text('Lempira a Dolar')),
                       SizedBox(
-                        width: 30,
+                        width: 73,
                       ),
                       ElevatedButton(
                           onPressed: () {
@@ -101,9 +106,7 @@ class _CambioMoneda extends State<CambioMoneda> {
                 )
                 
                 ),
-                floatingActionButton: FloatingActionButton(
-  child: const Icon(Icons.exit_to_app),
-      onPressed: () => Navigator.pop(context))
+           
      );
   }
 
