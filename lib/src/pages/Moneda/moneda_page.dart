@@ -100,7 +100,10 @@ class _CambioMoneda extends State<CambioMoneda> {
                 ]
                 )
                 
-                )
+                ),
+                floatingActionButton: FloatingActionButton(
+  child: const Icon(Icons.exit_to_app),
+      onPressed: () => Navigator.pop(context))
      );
   }
 
